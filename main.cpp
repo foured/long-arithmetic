@@ -5,6 +5,7 @@ int addchars(char c1, char c2, char c3);
 int substractchars(char c1, char c2);
 std::string addlines(std::string l1, std::string l2);
 std::string subtractlines(std::string l1, std::string l2, bool setOrder = false);
+std::string multiplylines(std::string l1, std::string l2);
 std::string revstr(std::string l);
 std::string getridoffirstzeros(std::string l);
 int findchar(std::string l, char ch, int start, int end = -1);
@@ -27,6 +28,7 @@ void menu() {
 	std::cout << "Выберите опцию:" << std::endl;
 	std::cout << "[1] - сложение" << std::endl;
 	std::cout << "[2] - вычитание" << std::endl;
+	std::cout << "[3] - умножение" << std::endl;
 	std::cout << "Ваш выбор: ";
 
 	int var;
@@ -45,6 +47,19 @@ void menu() {
 		else
 			std::cout << res << std::endl;
 	}
+	else if (var == 3) {
+		std::cout << multiplylines(n1, n2) << std::endl;
+	}
+}
+std::string multiplylines(std::string l1, std::string l2) {
+	std::string res = "0";
+	for (int i = 0; i < l2.size(); i++) {
+		if (l2[i] == '1') {
+			res = addlines(res, l1);
+		}
+		l1 += '0';
+	}
+	return res;
 }
 std::string subtractlines(std::string l1, std::string l2, bool setOrder) {
 	if (l1 == "0" && l2 == "0") return "0";
