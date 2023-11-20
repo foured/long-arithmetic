@@ -117,7 +117,7 @@ std::string subtractlines(std::string l1, std::string l2, bool setOrder) {
 			res += l1[k];
 		}
 	}
-	else{
+	else {
 		isNegative = true;
 		for (int i = 0; j < s1; j++) {
 			int r = substractchars(l2[j], l1[j]);
@@ -256,9 +256,12 @@ std::string addlines(std::string l1, std::string l2) {
 	return res;
 }
 int addchars(char c1, char c2, char c3) {
-	std::string n = { c1, c2, c3 };
-	
-	return std::count(n.begin(), n.end(), '1');
+	int res = 0;
+	if (c1 == '1') res++;
+	if (c2 == '1') res++;
+	if (c3 == '1') res++;
+
+	return res;
 }
 int substractchars(char c1, char c2) {
 	if (c1 == '1' && c2 == '0') return 1;
