@@ -53,6 +53,7 @@ void menu() {
 }
 std::string multiplylines(std::string l1, std::string l2) {
 	std::string res = "0";
+	l2 = revstr(l2);
 	for (int i = 0; i < l2.size(); i++) {
 		if (l2[i] == '1') {
 			res = addlines(res, l1);
