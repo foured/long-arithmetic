@@ -60,6 +60,8 @@ std::string multiplylines(std::string l1, std::string l2) {
 		}
 		l1 += '0';
 	}
+	if (res != "0")
+		res.pop_back();
 	return res;
 }
 std::string subtractlines(std::string l1, std::string l2, bool setOrder) {
