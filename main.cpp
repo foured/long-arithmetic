@@ -39,7 +39,11 @@ void menu() {
 		std::cout << addlines(n1, n2) << std::endl;
 	}
 	else if (var == 2) {
-		std::cout << subtractlines(n1, n2) << std::endl;
+		std::string res = subtractlines(n1, n2);
+		if (res == "")
+			std::cout << "0" << std::endl;
+		else
+			std::cout << res << std::endl;
 	}
 }
 std::string subtractlines(std::string l1, std::string l2, bool setOrder) {
